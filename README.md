@@ -37,3 +37,6 @@ The architecture is be thought as a sequence of phases as depicted in the follow
 **Executing**: Executes these commands, into an environment containing lawn and mowers  
 **Analysing**: Performs a series of result gathering to extract meaningful results from the execution, ex the position of the mowers, the exact path of each mower etc…  
 **Outputing**: Sends the results of the analysis to an output medium like screen, file or other  
+
+### Structure
+
