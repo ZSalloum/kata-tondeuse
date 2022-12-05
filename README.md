@@ -43,8 +43,8 @@ The project is divided into 2 modules:
 - core: The core module contains all the interfaces that are implemented by the 'app' module.
 - app: The app module is the module that implements interfaces defined in 'core' module.
 
-### File Structure
-The file structure of the modules is almost identical, it shows where the components of the architecture are located:  
+### Folders Structure
+The folders structure of the modules is almost identical, it shows where the components of the architecture are located:  
 - models: contains structures for mower and lawn
 - readers: contains classes to read data from sources such as files or databases
 - parsers: contains classes to parse data coming from readers
