@@ -28,4 +28,12 @@ Available orientations are N = North, W = West, S = South, E = East
 PS mowers execute sequentially, each mower finishes its job before the next one starts 
 
 ## Architecture
+The architecture is be thought as a sequence of phases as depicted in the following image.
+
 ![image](https://user-images.githubusercontent.com/403470/205603449-beead217-fa9f-47c4-aa6c-329ee700582d.png)
+
+Reading: reads data from a source, such as file or database.  
+Parsing: parses the data and converts them into a series of commands  
+Executing: Executes these commands, into an environment containing lawn and mowers  
+Analysing: Performs a series of result gathering to extract meaningful results from the execution, ex the position of the mowers, the exact path of each mower etc…  
+Outputing: Sends the results of the analysis to an output medium like screen, file or other  
