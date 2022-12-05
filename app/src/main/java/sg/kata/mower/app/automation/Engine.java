@@ -5,10 +5,11 @@ import org.apache.logging.log4j.Logger;
 import sg.kata.mower.app.automation.commands.EndCommand;
 import sg.kata.mower.app.readers.FileSource;
 import sg.kata.mower.core.automation.ICommand;
+import sg.kata.mower.core.automation.IEngine;
 import sg.kata.mower.core.models.IEnvironment;
 import sg.kata.mower.core.parsers.ISourceParser;
 
-public class Engine {
+public class Engine implements IEngine {
     private static final Logger logger = LogManager.getLogger(Engine.class);
     private ISourceParser sourceParser;
     private IEnvironment environment;

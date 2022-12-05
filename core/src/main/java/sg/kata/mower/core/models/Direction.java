@@ -2,6 +2,11 @@ package sg.kata.mower.core.models;
 
 import sg.kata.mower.core.MowerException;
 
+/**
+ * Enum that represent the direction of a mower.
+ * There are four dimensions: North, East, South and West
+ * Each direction has a value, a shortcut representation and x, y offsets
+ */
 public enum Direction{
     North(0, "N", 0, 1),
     East(1, "E", 1, 0),

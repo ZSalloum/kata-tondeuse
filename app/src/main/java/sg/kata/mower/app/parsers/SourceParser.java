@@ -3,7 +3,6 @@ package sg.kata.mower.app.parsers;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sg.kata.mower.app.automation.commands.*;
-import sg.kata.mower.app.readers.FileSource;
 import sg.kata.mower.core.MowerParsingException;
 import sg.kata.mower.core.automation.ICommand;
 import sg.kata.mower.core.automation.ICommandFactory;
@@ -35,7 +34,7 @@ public class SourceParser implements ISourceParser {
         ICommand command = null;
         switch (currentStep){
             case HEADER_STEP:
-                command = parseGridLawnInfo(reader.readHeader());
+                command = parseGridLawnInfo(reader.readLawn());
                 nextStep();
                 break;
 

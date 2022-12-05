@@ -25,7 +25,7 @@ public class SourceParserTest {
         }
 
         @Override
-        public String readHeader() {
+        public String readLawn() {
             if(!headerRead){
                 headerRead = true;
                 return header;

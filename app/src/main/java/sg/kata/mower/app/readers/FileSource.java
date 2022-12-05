@@ -34,8 +34,8 @@ public class FileSource implements IInputSourceReader {
     }
 
     @Override
-    public String readHeader() {
-        logger.info("Reading header");
+    public String readLawn() {
+        logger.info("Reading lawn info");
         return readNextStepLine(HEADER_STEP);
     }
 

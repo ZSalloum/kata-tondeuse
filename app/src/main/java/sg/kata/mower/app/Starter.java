@@ -8,12 +8,16 @@ import sg.kata.mower.app.automation.Engine;
 import sg.kata.mower.app.models.Environment;
 import sg.kata.mower.app.parsers.SourceParser;
 import sg.kata.mower.app.readers.FileSource;
+import sg.kata.mower.app.output.SimpleDisplay;
 import sg.kata.mower.core.analysis.IAnalysis;
 import sg.kata.mower.core.automation.ICommandFactory;
 import sg.kata.mower.core.models.IEnvironment;
 import sg.kata.mower.core.output.IDisplay;
 import sg.kata.mower.core.parsers.ISourceParser;
 
+/**
+ * Starter class that configure and setup all the components to be ready for execution
+ */
 public class Starter {
     private static final Logger logger = LogManager.getLogger(Starter.class);
     public void start(String filepath){
@@ -29,7 +33,7 @@ public class Starter {
             engine.run();
 
             IAnalysis output = new ResultAnalysis(env);
-            IDisplay display = new sg.kata.mower.output.SimpleDisplay(output);
+            IDisplay display = new SimpleDisplay(output);
             display.showMowersPosition();
 
         }catch (Exception ex){

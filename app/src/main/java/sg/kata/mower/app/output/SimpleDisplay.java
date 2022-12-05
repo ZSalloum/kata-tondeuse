@@ -1,8 +1,8 @@
-package sg.kata.mower.output;
+package sg.kata.mower.app.output;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import sg.kata.mower.app.parsers.SourceParser;
+import sg.kata.mower.core.models.Position;
 import sg.kata.mower.core.output.IDisplay;
 import sg.kata.mower.core.analysis.IAnalysis;
 
@@ -15,7 +15,8 @@ public class SimpleDisplay implements IDisplay {
     @Override
     public void showMowersPosition() {
         logger.info("Show mowers positions");
-        for(String s : analysis.getMowersPositions()){
+        for(Position p : analysis.getMowersPositions()){
+            String s = String.format("%d %d %s", p.getX(), p.getY(), p.getDirection());
             System.out.print(s);
             System.out.print(" ");
         }

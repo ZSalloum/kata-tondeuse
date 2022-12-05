@@ -6,6 +6,7 @@ import sg.kata.mower.core.models.IEnvironment;
 import sg.kata.mower.core.models.IGridLawn;
 import sg.kata.mower.core.models.IMower;
 import sg.kata.mower.core.analysis.IAnalysis;
+import sg.kata.mower.core.models.Position;
 
 import java.util.ArrayList;
 
@@ -16,18 +17,18 @@ public class ResultAnalysis implements IAnalysis {
         this.environment = environment;
     }
     @Override
-    public String[] getMowersPositions() {
+    public Position[] getMowersPositions() {
         logger.info("get mowers positions");
         IGridLawn lawn = environment.getGridLawn();
         if(lawn != null){
-            ArrayList<String> positions = new ArrayList<>();
+            ArrayList<Position> positions = new ArrayList<>();
             for(IMower mower : lawn.getMowers()){
-                String s = String.format("%d %d %s", mower.getX(), mower.getY(), mower.getDirection());
-                positions.add(s);
+                Position pos = new Position(mower.getX(), mower.getY(), mower.getDirection());
+                positions.add(pos);
             }
 
-            return positions.toArray(new String[0]);
+            return positions.toArray(new Position[0]);
         }
-        return new String[0];
+        return new Position[0];
     }
 }

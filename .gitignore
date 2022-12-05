@@ -3,3 +3,5 @@
 /app/target/
 /logs/mower.log
 /app/target/classes/sg/kata/mower/app/Main.class
+/app/logs/
+/logs/
