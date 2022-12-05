@@ -38,5 +38,10 @@ The architecture is be thought as a sequence of phases as depicted in the follow
 **Analysing**: Performs a series of result gathering to extract meaningful results from the execution, ex the position of the mowers, the exact path of each mower etc…  
 **Outputing**: Sends the results of the analysis to an output medium like screen, file or other  
 
+### Modules
+The project is divided into 2 modules:
+- core: The core module contains all the interfaces that are implemented by the 'app' module.
+- app: The app module is the module that implements interfaces defined in 'core' module.
+
 ### File Structure
 
