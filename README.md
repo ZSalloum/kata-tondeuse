@@ -11,7 +11,7 @@ The lawn is a grid, its size is given by the input file in the form of the coord
 The bottom left corner (origin) of the grid has the coordinates 0x0, and the top right corner has the coordinate NxM.
 
 ### File format
-1st line contains the upper right corner of the grid as 2 number separated by a space ex: 5 5
+1st line contains the upper right corner of the grid as 2 number separated by a space ex: 5 5 _
 2nd line contains the coordinates of a mower and its orientation separated by spaces ex: 1 3 E
 which means x = 1, y = 3 and the orientation is East.
 Available orientations are N = North, W = West, S = South, E = East
@@ -21,7 +21,7 @@ Available orientations are N = North, W = West, S = South, E = East
  G tells the mower to turn left (in place, without changing coordinates)
  The 2nd and 3rd lines can be repeated as needed in order to represent more mowers
 
-* Important *: a mower that is unable to execute a command (ex going of the grid, or coordinate occupierd by another mower) simply ignores it and continues to the next command.
+**Important**: a mower that is unable to execute a command (ex going of the grid, or coordinate occupierd by another mower) simply ignores it and continues to the next command.
 
 PS mowers execute sequentially, each mower finishes its job before the next one starts 
 
