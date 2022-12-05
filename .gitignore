@@ -1,3 +1,5 @@
 /app/target/
 /core/target/
 /app/target/
+/logs/mower.log
+/app/target/classes/sg/kata/mower/app/Main.class
