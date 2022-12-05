@@ -1,0 +1,94 @@
+2022-12-05 17:27:19,972 INFO  [main] Opening file : app/target/classes/mower.txt
+2022-12-05 17:53:20,751 INFO s.k.m.a.r.FileSource [main] Opening file : app/target/classes/mower.txt2
+2022-12-05 17:53:20,757 ERROR s.k.m.a.Starter [main] java.io.FileNotFoundException: app\target\classes\mower.txt2 (The system cannot find the file specified)
+2022-12-05 18:03:09,305 INFO s.k.m.a.r.FileSource [main] Opening file : app/target/classes/mower.txt
+2022-12-05 18:03:09,316 INFO s.k.m.a.r.FileSource [main] Reading header
+2022-12-05 18:03:09,317 INFO s.k.m.a.p.SourceParser [main] Parsing lawn info: 5 5
+2022-12-05 18:03:09,319 INFO s.k.m.a.r.FileSource [main] Reading mower info
+2022-12-05 18:03:09,319 INFO s.k.m.a.p.SourceParser [main] Parsing mower info: 1 2 N
+2022-12-05 18:03:09,320 INFO s.k.m.a.p.SourceParser [main] Parsing direction: N
+2022-12-05 18:03:09,321 INFO s.k.m.a.r.FileSource [main] Reading header command
+2022-12-05 18:03:09,321 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:03:09,322 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,322 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:03:09,322 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,322 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:03:09,322 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,323 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:03:09,323 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,323 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,323 INFO s.k.m.a.r.FileSource [main] Reading mower info
+2022-12-05 18:03:09,323 INFO s.k.m.a.p.SourceParser [main] Parsing mower info: 3 3 E
+2022-12-05 18:03:09,323 INFO s.k.m.a.p.SourceParser [main] Parsing direction: E
+2022-12-05 18:03:09,324 INFO s.k.m.a.r.FileSource [main] Reading header command
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:03:09,324 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:03:09,325 INFO s.k.m.a.r.FileSource [main] Reading mower info
+2022-12-05 18:03:09,325 INFO s.k.m.a.p.SourceParser [main] Parsing mower info: null
+2022-12-05 18:03:09,325 INFO s.k.m.a.a.ResultAnalysis [main] get mowers positions
+2022-12-05 18:06:07,970 INFO s.k.m.a.r.FileSource [main] Opening file : app/target/classes/mower.txt
+2022-12-05 18:06:07,982 INFO s.k.m.a.r.FileSource [main] Reading header
+2022-12-05 18:06:07,983 INFO s.k.m.a.p.SourceParser [main] Parsing lawn info: 5 5
+2022-12-05 18:06:07,984 INFO s.k.m.a.a.Engine [main] Execute command: CreateGridLawn
+2022-12-05 18:06:07,985 INFO s.k.m.a.r.FileSource [main] Reading mower info
+2022-12-05 18:06:07,985 INFO s.k.m.a.p.SourceParser [main] Parsing mower info: 1 2 N
+2022-12-05 18:06:07,985 INFO s.k.m.a.p.SourceParser [main] Parsing direction: N
+2022-12-05 18:06:07,986 INFO s.k.m.a.a.Engine [main] Execute command: CreateMower
+2022-12-05 18:06:07,987 INFO s.k.m.a.r.FileSource [main] Reading header command
+2022-12-05 18:06:07,987 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:06:07,987 INFO s.k.m.a.a.Engine [main] Execute command: TurnLeft
+2022-12-05 18:06:07,987 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,987 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,987 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:06:07,987 INFO s.k.m.a.a.Engine [main] Execute command: TurnLeft
+2022-12-05 18:06:07,987 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: TurnLeft
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: G
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: TurnLeft
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: NoMoreAction
+2022-12-05 18:06:07,988 INFO s.k.m.a.r.FileSource [main] Reading mower info
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing mower info: 3 3 E
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing direction: E
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: CreateMower
+2022-12-05 18:06:07,988 INFO s.k.m.a.r.FileSource [main] Reading header command
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,988 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,988 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,989 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,989 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:06:07,989 INFO s.k.m.a.a.Engine [main] Execute command: TurnRight
+2022-12-05 18:06:07,989 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,989 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,989 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,989 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,989 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:06:07,989 INFO s.k.m.a.a.Engine [main] Execute command: TurnRight
+2022-12-05 18:06:07,989 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,989 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,990 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:06:07,990 INFO s.k.m.a.a.Engine [main] Execute command: TurnRight
+2022-12-05 18:06:07,990 INFO s.k.m.a.p.SourceParser [main] Parsing command: D
+2022-12-05 18:06:07,990 INFO s.k.m.a.a.Engine [main] Execute command: TurnRight
+2022-12-05 18:06:07,990 INFO s.k.m.a.p.SourceParser [main] Parsing command: A
+2022-12-05 18:06:07,990 INFO s.k.m.a.a.Engine [main] Execute command: Forward
+2022-12-05 18:06:07,990 INFO s.k.m.a.a.Engine [main] Execute command: NoMoreAction
+2022-12-05 18:06:07,990 INFO s.k.m.a.r.FileSource [main] Reading mower info
+2022-12-05 18:06:07,990 INFO s.k.m.a.p.SourceParser [main] Parsing mower info: null
+2022-12-05 18:06:07,990 INFO s.k.m.o.SimpleDisplay [main] Show mowers positions
+2022-12-05 18:06:07,990 INFO s.k.m.a.a.ResultAnalysis [main] get mowers positions
