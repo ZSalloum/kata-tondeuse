@@ -56,14 +56,14 @@ The folders structure of the modules is almost identical, it shows where the com
 The application supports extensibility by letting custom command be inserted into the engine.
 A json file should be given to the CommandFactory.loadCustomCommandsMapping() that maps the name of the command with the cusom ICommand instance.
 for example:
-> {
+> {  
 > 'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand',
 > 'CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand',
 > 'D':'sg.kata.mower.app.automation.commands.TurnRightCommand',
 > 'G':'sg.kata.mower.app.automation.commands.TurnLeftCommand',
-> 'A':'sg.kata.mower.app.automation.commands.ForwardCommand',
+> 'A':'sg.kata.mower.app.automation.commands.ForwardCommand',  
 > }
 
-### Creating Custom ICommand
+### Creating Custom Command
 To create a new custom command, you must implement the ICommand interface.  
 It is important to use one and only one constructor so that the engine can instantiate the command appropriately.
