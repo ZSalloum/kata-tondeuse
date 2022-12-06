@@ -6,7 +6,7 @@ import sg.kata.mower.app.automation.Engine;
 import sg.kata.mower.app.models.Environment;
 import sg.kata.mower.app.output.SimpleDisplay;
 import sg.kata.mower.app.parsers.SourceParser;
-import sg.kata.mower.app.readers.FileSource;
+import sg.kata.mower.app.readers.SourceReader;
 import sg.kata.mower.core.analysis.IAnalysis;
 import sg.kata.mower.core.automation.ICommandFactory;
 import sg.kata.mower.core.models.Direction;
@@ -15,6 +15,9 @@ import sg.kata.mower.core.models.Position;
 import sg.kata.mower.core.output.IDisplay;
 import sg.kata.mower.core.parsers.ISourceParser;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
 import java.io.StringReader;
 
 public class FullChainTest {
@@ -24,9 +27,11 @@ public class FullChainTest {
 
     @Test
     public void should_execute_full_with_custom_commands(){
-        FileSource reader = new FileSource("C:\\Users\\zsall\\source\\kata-tondeuse\\app\\target\\classes\\mower.txt");
+        Reader freader = null;
+        final String fpath = "C:\\Users\\zsall\\source\\kata-tondeuse\\app\\target\\classes\\mower.txt";
         try {
-            reader.open();
+            freader = open(fpath);
+            SourceReader reader = new SourceReader(freader);
             ICommandFactory commandFactory = new CommandFactory();
             commandFactory.clearMapping();
             StringReader sr = new StringReader(str);
@@ -58,7 +63,20 @@ public class FullChainTest {
             ex.printStackTrace();
         }
         finally {
-            reader.close();
+            close(freader);
+        }
+    }
+
+    private Reader open(String filepath) throws FileNotFoundException {
+        return new FileReader(filepath);
+    }
+
+    private void close(Reader reader){
+        try{
+            if(reader != null) {
+                reader.close();
+            }
+        }catch (Exception ex) {
         }
     }
 }

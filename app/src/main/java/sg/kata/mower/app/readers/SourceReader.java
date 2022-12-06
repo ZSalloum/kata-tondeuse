@@ -5,12 +5,13 @@ import sg.kata.mower.core.readers.IInputSourceReader;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.Reader;
 import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class FileSource implements IInputSourceReader {
-    private static final Logger logger = LogManager.getLogger(FileSource.class);
+public class SourceReader implements IInputSourceReader {
+    private static final Logger logger = LogManager.getLogger(SourceReader.class);
 
     private static final int HEADER_STEP = -1;
     private static final int MOWER_STEP = 0;
@@ -19,17 +20,8 @@ public class FileSource implements IInputSourceReader {
     private int currentStep = HEADER_STEP;
     private String filepath;
     private Scanner scanner;
-    public  FileSource(String filepath){
-        this.filepath = filepath;
-    }
-
-    public void open() throws FileNotFoundException {
-        logger.info("Opening file : {}", filepath);
-        scanner = new Scanner(new FileReader(filepath));
-    }
-
-    public void close(){
-        scanner.close();
+    public SourceReader(Reader reader){
+        scanner = new Scanner(reader);
     }
 
     @Override

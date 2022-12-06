@@ -3,7 +3,6 @@ package sg.kata.mower.app.automation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import sg.kata.mower.app.automation.commands.EndCommand;
-import sg.kata.mower.app.readers.FileSource;
 import sg.kata.mower.core.automation.ICommand;
 import sg.kata.mower.core.automation.IEngine;
 import sg.kata.mower.core.models.IEnvironment;
