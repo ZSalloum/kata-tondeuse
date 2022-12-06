@@ -22,11 +22,11 @@ import java.io.StringReader;
 
 public class FullChainTest {
 
-    private String StandardMapping = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','D':'sg.kata.mower.app.automation.commands.TurnRightCommand','G':'sg.kata.mower.app.automation.commands.TurnLeftCommand','A':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
+    private final String StandardMapping = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','D':'sg.kata.mower.app.automation.commands.TurnRightCommand','G':'sg.kata.mower.app.automation.commands.TurnLeftCommand','A':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
     private final String StandardInput = "5 5\n1 2 N\nGAGAGAGAA\n3 3 E\nAADAADADDA";
 
 
-    private String EnglishMapping = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','R':'sg.kata.mower.app.automation.commands.TurnRightCommand','L':'sg.kata.mower.app.automation.commands.TurnLeftCommand','F':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
+    private final String EnglishMapping = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','R':'sg.kata.mower.app.automation.commands.TurnRightCommand','L':'sg.kata.mower.app.automation.commands.TurnLeftCommand','F':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
 
     private final String EnglishInput = "5 5\n1 2 N\nLFLFLFLFF\n3 3 E\nFFRFFRFRRF";
 
@@ -93,17 +93,5 @@ public class FullChainTest {
         }
 
         return null;
-    }
-    private Reader open(String filepath) throws FileNotFoundException {
-        return new FileReader(filepath);
-    }
-
-    private void close(Reader reader){
-        try{
-            if(reader != null) {
-                reader.close();
-            }
-        }catch (Exception ex) {
-        }
     }
 }
