@@ -59,7 +59,7 @@ for example:
 > {  
 > 'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand',
 > 'CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand',
-> 'D':'sg.kata.mower.app.automation.commands.TurnRightCommand',
+> 'D':'sg.kata.mower.app.automation.commands.TurnRightCommand',  
 > 'G':'sg.kata.mower.app.automation.commands.TurnLeftCommand',
 > 'A':'sg.kata.mower.app.automation.commands.ForwardCommand',  
 > }
