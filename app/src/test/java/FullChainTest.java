@@ -22,20 +22,62 @@ import java.io.StringReader;
 
 public class FullChainTest {
 
-    private String str = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','D':'sg.kata.mower.app.automation.commands.TurnRightCommand','G':'sg.kata.mower.app.automation.commands.TurnLeftCommand','A':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
+    private String StandardMapping = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','D':'sg.kata.mower.app.automation.commands.TurnRightCommand','G':'sg.kata.mower.app.automation.commands.TurnLeftCommand','A':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
+    private final String StandardInput = "5 5\n1 2 N\nGAGAGAGAA\n3 3 E\nAADAADADDA";
 
+
+    private String EnglishMapping = "{'CreateLawn':'sg.kata.mower.app.automation.commands.CreateGridLawnCommand','CreateMower':'sg.kata.mower.app.automation.commands.CreateMowerCommand','R':'sg.kata.mower.app.automation.commands.TurnRightCommand','L':'sg.kata.mower.app.automation.commands.TurnLeftCommand','F':'sg.kata.mower.app.automation.commands.ForwardCommand'}";
+
+    private final String EnglishInput = "5 5\n1 2 N\nLFLFLFLFF\n3 3 E\nFFRFFRFRRF";
 
     @Test
     public void should_execute_full_with_custom_commands(){
-        Reader freader = null;
-        final String fpath = "C:\\Users\\zsall\\source\\kata-tondeuse\\app\\target\\classes\\mower.txt";
+        IAnalysis output = execute_full_chain(StandardMapping, StandardInput);
+
+        Position[] positions = output.getMowersPositions();
+        Assertions.assertEquals(positions.length, 2);
+
+        Assertions.assertEquals(positions[0].getX(), 1);
+        Assertions.assertEquals(positions[0].getY(), 3);
+        Assertions.assertEquals(positions[0].getDirection(), Direction.North);
+
+        Assertions.assertEquals(positions[1].getX(), 5);
+        Assertions.assertEquals(positions[1].getY(), 1);
+        Assertions.assertEquals(positions[1].getDirection(), Direction.East);
+
+        IDisplay display = new SimpleDisplay(output);
+        display.showMowersPosition();
+    }
+
+
+    @Test
+    public void should_execute_full_with_english_commands(){
+        IAnalysis output = execute_full_chain(EnglishMapping, EnglishInput);
+
+        Position[] positions = output.getMowersPositions();
+        Assertions.assertEquals(positions.length, 2);
+
+        Assertions.assertEquals(positions[0].getX(), 1);
+        Assertions.assertEquals(positions[0].getY(), 3);
+        Assertions.assertEquals(positions[0].getDirection(), Direction.North);
+
+        Assertions.assertEquals(positions[1].getX(), 5);
+        Assertions.assertEquals(positions[1].getY(), 1);
+        Assertions.assertEquals(positions[1].getDirection(), Direction.East);
+
+        IDisplay display = new SimpleDisplay(output);
+        display.showMowersPosition();
+    }
+
+    private IAnalysis execute_full_chain(String mapping, String input){
         try {
-            freader = open(fpath);
-            SourceReader reader = new SourceReader(freader);
+            StringReader inputStrReader = new StringReader(input);
+            SourceReader reader = new SourceReader(inputStrReader);
+
             ICommandFactory commandFactory = new CommandFactory();
             commandFactory.clearMapping();
-            StringReader sr = new StringReader(str);
-            commandFactory.loadCustomCommandsMapping(sr);
+            StringReader mappingStrReader = new StringReader(mapping);
+            commandFactory.loadCustomCommandsMapping(mappingStrReader);
 
             ISourceParser parser = new SourceParser(reader, commandFactory);
             IEnvironment env = new Environment();
@@ -44,29 +86,14 @@ public class FullChainTest {
             engine.run();
 
             IAnalysis output = new ResultAnalysis(env);
-
-            Position[] positions = output.getMowersPositions();
-            Assertions.assertEquals(positions.length, 2);
-
-            Assertions.assertEquals(positions[0].getX(), 1);
-            Assertions.assertEquals(positions[0].getY(), 3);
-            Assertions.assertEquals(positions[0].getDirection(), Direction.North);
-
-            Assertions.assertEquals(positions[1].getX(), 5);
-            Assertions.assertEquals(positions[1].getY(), 1);
-            Assertions.assertEquals(positions[1].getDirection(), Direction.East);
-
-            IDisplay display = new SimpleDisplay(output);
-            display.showMowersPosition();
+            return output;
 
         }catch (Exception ex){
             ex.printStackTrace();
         }
-        finally {
-            close(freader);
-        }
-    }
 
+        return null;
+    }
     private Reader open(String filepath) throws FileNotFoundException {
         return new FileReader(filepath);
     }
