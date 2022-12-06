@@ -38,6 +38,9 @@ The architecture is thought as a sequence of phases (or a workflow) as depicted 
 **Analysing**: Performs a series of result gathering to extract meaningful results from the execution, ex the position of the mowers, the exact path of each mower etc…  
 **Outputing**: Sends the results of the analysis to an output medium like screen, file or other  
 
+![image](https://user-images.githubusercontent.com/403470/205922013-50d75089-5b38-412d-b386-60dd8014402b.png)
+
+
 ### Modules
 The project is divided into 2 modules:
 - core: The core module contains all the interfaces that are implemented by the 'app' module.
