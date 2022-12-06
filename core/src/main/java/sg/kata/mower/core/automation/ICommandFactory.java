@@ -1,4 +1,5 @@
 package sg.kata.mower.core.automation;
+import java.io.Reader;
 
 /**
  * Interface of a factory to create commands
@@ -40,10 +41,22 @@ public interface ICommandFactory {
     void removeCommand(String cmdName);
 
     /**
+     * Clears the command mapping inside the CommandFactory
+     */
+    void clearMapping();
+
+
+    /**
      * Create an instance of ICommand based on the command name
      * @param cmdName command name
      * @param parameters parameters to be passed to the ICommand instance
      * @return ICommand instance
      */
     ICommand createCommand(String cmdName, Object[] parameters);
+
+    /**
+     * Load custom command mapping from a reader such string or file, etc...
+     * @param reader source of the mapping
+     */
+    void loadCustomCommandsMapping(Reader reader);
 }

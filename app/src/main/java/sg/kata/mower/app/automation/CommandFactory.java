@@ -1,16 +1,22 @@
 package sg.kata.mower.app.automation;
 
+import com.google.gson.Gson;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import sg.kata.mower.core.MowerException;
 import sg.kata.mower.core.automation.ICommand;
 import sg.kata.mower.core.automation.ICommandFactory;
 
 import sg.kata.mower.app.automation.commands.*;
 
+import java.io.Reader;
+import java.io.StringReader;
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
+import java.util.Map;
 
 public class CommandFactory implements ICommandFactory {
-
+    private static final Logger logger = LogManager.getLogger(CommandFactory.class);
     private HashMap<String, String> commandMap = new HashMap<>();
 
     public CommandFactory(){
@@ -27,6 +33,10 @@ public class CommandFactory implements ICommandFactory {
         commandMap.remove(cmdName);
     }
 
+    @Override
+    public void clearMapping(){
+        commandMap.clear();
+    }
 
     @Override
     public ICommand createCommand(String cmd, Object[] parameters) {
@@ -47,6 +57,24 @@ public class CommandFactory implements ICommandFactory {
         throw new MowerException(String.format("No command found for '%s'", cmd));
     }
 
+
+    @Override
+    public void loadCustomCommandsMapping(Reader reader) {
+        try {
+            logger.info("Loading custom commands");
+            Gson gson = new Gson();
+            Map map = gson.fromJson(reader, Map.class);
+            if(map != null) {
+                logger.info("{} custom commands loaded", map.size());
+                for (Object key : map.keySet()) {
+                    mapNewCommand(key.toString(), map.get(key).toString());
+                }
+            }
+        }catch (Exception ex){
+            logger.error("Error loading custom commands'");
+            logger.error(ex);
+        }
+    }
 
     private void populatePrebuiltCommandMap(){
         commandMap.clear();

@@ -1,6 +1,5 @@
 package sg.kata.mower.app.readers;
 
-import sg.kata.mower.app.Main;
 import sg.kata.mower.core.MowerException;
 import sg.kata.mower.core.readers.IInputSourceReader;
 
