@@ -28,7 +28,7 @@ Available orientations are N = North, W = West, S = South, E = East
 PS mowers execute sequentially, each mower finishes its job before the next one starts 
 
 ## Architecture
-The architecture is be thought as a sequence of phases as depicted in the following image.
+The architecture is thought as a sequence of phases (or a workflow) as depicted in the following image.
 
 ![image](https://user-images.githubusercontent.com/403470/205603449-beead217-fa9f-47c4-aa6c-329ee700582d.png)
 
