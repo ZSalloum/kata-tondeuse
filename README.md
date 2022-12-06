@@ -64,7 +64,8 @@ for example:
 > 'A':'sg.kata.mower.app.automation.commands.ForwardCommand',  
 > }
 
-A good use case for the extensibility is when you need to use English commands such as R L F to control the mower, or when you need a completely new command (see Creating Custom Command)
+A good use case for the extensibility is when you need to use English commands such as R L F to control the mower, or when you need a completely new command (see Creating Custom Command).  
+By default CommandFactory has a built-in mapping.
 
 ### Creating Custom Command
 To create a new custom command, you must implement the ICommand interface.  
