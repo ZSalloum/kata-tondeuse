@@ -64,6 +64,8 @@ for example:
 > 'A':'sg.kata.mower.app.automation.commands.ForwardCommand',  
 > }
 
+A good use case for the extensibility is when you need to use English commands such as R L F to control the mower, or when you need a completely new command (see Creating Custom Command)
+
 ### Creating Custom Command
 To create a new custom command, you must implement the ICommand interface.  
 It is important to use one and only one constructor so that the engine can instantiate the command appropriately.
