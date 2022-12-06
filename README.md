@@ -14,7 +14,7 @@ The bottom left corner (origin) of the grid has the coordinates 0x0, and the top
 1st line contains the upper right corner of the grid as 2 numbers separated by a space ex: 5 5  
 
 2nd line contains the coordinates of a mower and its direction separated by spaces ex: 1 3 E  
-where x = 1, y = 3 and the orientation is East.  
+where x = 1, y = 3 and the direction is East.  
 Available directions are N = North, W = West, S = South, E = East  
 
 3rd line is a series of commmands to apply to the mower. Each command is a one-letter, there are no spaces between commands ex: ADAAGGA  
