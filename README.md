@@ -3,7 +3,7 @@ Automation of mowers
 ## Overview
 Java project to automate virtual mowers, working on a lawn.  
 The aim is to use the coding best practices, using SOLID principle and unit testing.  
-An imput file contains commands to control the movdment of the mowers.
+An imput file is used to send commands to mowers in order to control their movdments.
  
  
 ## Functional specification 
