@@ -75,4 +75,4 @@ To create a new custom command, you must implement the ICommand interface.
 It is important to use one and only one constructor so that the engine can instantiate the command appropriately.
 
 ### Running the Program
-java -classpath "path-to-compiled-classes-and-other-jars" sg.kata.mower.app.Main "path-to-input-file"
+java -classpath &lt;path-to-compiled-classes-and-other-jars" sg.kata.mower.app.Main "path-to-input-file"
